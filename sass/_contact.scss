@@ -1,0 +1,46 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 3rem;
+  width: 100%;
+
+  &__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+
+      & input,
+      textarea {
+        margin-bottom: 1rem;
+        height: 2.5rem;
+        padding-left: 1rem;
+      }
+
+      & textarea {
+        height: 6rem;
+        padding-top: 1rem;
+      }
+
+      & button {
+        background-color: rgb(52, 150, 216);
+        height: 2rem;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{% extends "index.html" %} {% block content %}
+<div class="contact">
+  <div>{{page.content | safe}}</div>
+  <div class="contact__right">
+    <span class="contact__right__title">Send a message</span>
+    <form>
+      <input class="" placeholder="Full Name" />
+      <input placeholder="Email" />
+      <textarea placeholder="Message"></textarea>
+      <button>Send</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}

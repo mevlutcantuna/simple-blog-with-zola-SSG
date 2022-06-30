@@ -1,0 +1,101 @@
+.main {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+.container {
+  padding: 0 1rem;
+}
+
+.header {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: rgb(54, 54, 54);
+}
+
+.menu > ul {
+  display: flex;
+}
+
+.menu-item {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.menu-item > a {
+  color: rgb(54, 54, 54);
+}
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.about {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 4rem;
+  line-height: 2rem;
+
+  & a {
+    color: rgb(156, 65, 65);
+  }
+}
+
+.home {
+  width: 100%;
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: 70rem 30rem;
+  background-position-x: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    padding: 1rem 2.75rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: pointer;
+    background-color: rgb(209, 206, 206);
+    color: black;
+  }
+}
+
+.posts {
+  margin-top: 3rem;
+
+  &__item {
+    margin-bottom: 4rem;
+
+    &__title {
+      margin-bottom: 1rem;
+    }
+
+    &__summary {
+      letter-spacing: 1px;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

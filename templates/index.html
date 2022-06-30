@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My website</title>
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Import CSS file -->
+    {% block css %} 
+    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) }}"> 
+    {% endblock css %}
+
+  </head>
+  <body>
+      <div class="container">
+          
+    <header class="header">
+      <a class="logo" href="{{ config.base_url }}"> MCT </a>
+      <nav class="menu">
+        <ul>
+            {% for item in config.extra.menu %}
+            <li class="menu-item">
+                <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                    {{ item.name }}
+                </a>
+            </li>
+            {% endfor %} 
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+        {% block content %}
+        <div class="home" style="background-image: url('{{ get_url(path="/picture.jpeg")}}')">
+            <div class="home__title">Welcome to blog</div>
+            <button class="home__button">Explore</button>
+        </div>
+
+        <div class="posts">
+          {% for page in paginator.pages %}
+            <div class="posts__item">
+              <h1 class="posts__item__title">{{page.title}}</h1>
+              <div class="posts__item__summary">
+                {{page.summary | safe}}
+              </div>
+              <a class="posts__item__summary" href='{{page.permalink}}'>Read More</a>
+            </div>
+          {%endfor%}
+        </div>
+        {% endblock content %}         
+    </main>
+</div>
+      {% block js_body %}
+          <script type="text/javascript" src="{{ get_url(path="index.js", trailing_slash=false) }}"></script>
+      {% endblock js_body %}
+</body>
+</html>
